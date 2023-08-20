@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: roguelikeIndoor_transparent_24
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -1587424431, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.75628126, g: 0.7735849, b: 0.33935562, a: 1}
   m_Transform:
     e00: 1
     e01: 0
