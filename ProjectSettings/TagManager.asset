@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
