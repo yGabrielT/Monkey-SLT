@@ -13,7 +13,7 @@ public class WeaponShoot : MonoBehaviour
     [SerializeField] private float _enemyCooldown = .5f;
     private float MaxCd;
     [HideInInspector]public bool inRange;
-    private CameraController _cam;
+    [SerializeField] private CameraController _cam;
     [SerializeField] float _shakeMag;
     [SerializeField] float _shakeDuration;
     [SerializeField] float RandomFactor = 0.5f;
@@ -22,10 +22,6 @@ public class WeaponShoot : MonoBehaviour
     void Start()
     {
         MaxCd = _enemyCooldown;
-        if (!_isEnemy)
-        {
-            _cam = Camera.main.GetComponent<CameraController>();
-        }
         
     }
 

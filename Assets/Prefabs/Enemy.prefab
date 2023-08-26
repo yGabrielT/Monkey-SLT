@@ -66,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 4538405139340944900}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &391853340663219164
 SpriteRenderer:
@@ -302,6 +302,7 @@ MonoBehaviour:
   _isEnemy: 1
   _enemyCooldown: 1
   inRange: 0
+  _cam: {fileID: 0}
   _shakeMag: 0
   _shakeDuration: 0
   RandomFactor: 0.5

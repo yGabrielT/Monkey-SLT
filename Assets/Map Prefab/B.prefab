@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  waitTime: 5
 --- !u!50 &8450054359529376472
 Rigidbody2D:
   serializedVersion: 4
@@ -1726,14 +1727,14 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 100
-    m_Data: {fileID: 11400000, guid: 13fd6e7363ca605409dfce8b317a5d4d, type: 2}
+    m_Data: {fileID: 11400000, guid: 9bcedda7ef3ff0b48acefaf37eec6e1e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 100
-    m_Data: {fileID: 1870822504, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
+    m_Data: {fileID: -483778553, guid: 85c7033fc943dd541a1e32f46bd3219f, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 100
     m_Data:
@@ -1885,6 +1886,7 @@ GameObject:
   - component: {fileID: 2390576377383290625}
   - component: {fileID: 324201423574823650}
   - component: {fileID: 6328963390666932652}
+  - component: {fileID: 893116806367635461}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -2017,6 +2019,18 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 7149807107705791181}
+--- !u!114 &893116806367635461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7149807107705791181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f117d4776e3bfa548914145c13a681ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7987061892983015997
 GameObject:
   m_ObjectHideFlags: 0

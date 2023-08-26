@@ -8,6 +8,7 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     public int openingDirection;
     private bool spawned = false;
+    [SerializeField] private float waitTime = 5f;
     //1- Top
     //2- Right
     //3 - Bottom
@@ -15,16 +16,17 @@ public class RoomSpawner : MonoBehaviour
 
     private void Start()
     {
+        Destroy(this.gameObject, waitTime);
         _templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.1f);
+        Invoke("Spawn", 0.2f);
     }
 
     void Spawn()
     {
-        if (!spawned /*&& _templates.actualRoomsSpawned < _templates.MaxnumberOfRooms*/)
+        if (!spawned && _templates.actualRoomsSpawned < _templates.MaxnumberOfRooms)
         {
             spawned = true;
-            //_templates.actualRoomsSpawned++;
+            _templates.actualRoomsSpawned++;
             if (openingDirection == 3)
             {
                 rand = Random.Range(0, _templates.topRooms.Length);
