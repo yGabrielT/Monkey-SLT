@@ -12,9 +12,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _aggroRange = 5f;
     [SerializeField] private GameObject _pivotWeapon;
     private WeaponShoot _weapon;
+    private float health;
 
     void Start()
     {
+        health = _enemyHealth;
         _weapon = GetComponentInChildren<WeaponShoot>();
         _enemyRb = GetComponent<Rigidbody2D>();
         _playerTarget = GameObject.FindWithTag("Player").transform;
@@ -53,29 +55,15 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _aggroRange);
     }
 
-    private void TakeDamage(float damage)
-    {
-        if (!_weapon.inRange)
-        {
-            _weapon.inRange = true;
-        }
-        if (_enemyHealth <= 100)
-        {
-            _enemyHealth -= damage;
-            Debug.Log("Dano");
-        }
-        if (_enemyHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        if(other.gameObject.tag == ("BulletPlayer"))
         {
+            GameManager.Instance.TakeDamage(health, 20f, this.gameObject);
             Destroy(other.gameObject);
-            TakeDamage(20);
+            
         }
     }
 }

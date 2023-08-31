@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     private bool _isKnockBacked = false;
     [SerializeField] private float _knockbackDelay = 0.5f;
     [SerializeField] private float _knockbackForce = 3f;
+    [SerializeField] private float _maxPlayerHealth = 200f;
+    private float healthPlayer;
 
 
     void Start()
     {
-        
+        healthPlayer = _maxPlayerHealth;
     }
 
     void Update()
@@ -53,5 +55,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(_knockbackDelay);
         _isKnockBacked = false;
         _playerRb.velocity = Vector2.zero;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == ("Bullet"))
+        {
+            GameManager.Instance.TakeDamage(healthPlayer, 20f, this.gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }
