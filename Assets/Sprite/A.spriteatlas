@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sprite Atlas
+  m_Name: A
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -15,25 +15,12 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 0
+      filterMode: 1
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings:
-    - serializedVersion: 3
-      m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 2048
-      m_ResizeAlgorithm: 0
-      m_TextureFormat: -1
-      m_TextureCompression: 0
-      m_CompressionQuality: 50
-      m_CrunchedCompression: 0
-      m_AllowsAlphaSplitting: 0
-      m_Overridden: 0
-      m_IgnorePlatformSupport: 0
-      m_AndroidETC2FallbackOverride: 0
-      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    platformSettings: []
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -45,8 +32,8 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
     - {fileID: 2800000, guid: 85c7033fc943dd541a1e32f46bd3219f, type: 3}
+    - {fileID: 2800000, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -2785,5 +2772,5 @@ SpriteAtlas:
   - roguelikeIndoor_transparent_69
   - roguelikeIndoor_transparent_21
   m_RenderDataMap: {}
-  m_Tag: Sprite Atlas
+  m_Tag: A
   m_IsVariant: 0

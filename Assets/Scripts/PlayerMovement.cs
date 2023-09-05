@@ -12,14 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private bool _isKnockBacked = false;
     [SerializeField] private float _knockbackDelay = 0.5f;
     [SerializeField] private float _knockbackForce = 3f;
-    [SerializeField] private float _maxPlayerHealth = 200f;
-    private float healthPlayer;
+    [SerializeField] private float playerHealth = 100f;
+    [SerializeField] Transform weapon;
 
-
-    void Start()
-    {
-        healthPlayer = _maxPlayerHealth;
-    }
 
     void Update()
     {
@@ -51,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Botao Espaço Pressionado");
         _isKnockBacked = true;
         _movementSpeed = 0f;
-        _playerRb.AddForce(Vector2.right * _knockbackForce, ForceMode2D.Impulse);
+        _playerRb.AddForce(weapon.forward * _knockbackForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(_knockbackDelay);
         _isKnockBacked = false;
         _playerRb.velocity = Vector2.zero;
@@ -61,8 +56,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.tag == ("Bullet"))
         {
-            GameManager.Instance.TakeDamage(healthPlayer, 20f, this.gameObject);
+            TakeDamage(20f);
             Destroy(other.gameObject);
+        }
+    }
+
+    private void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+        Debug.Log("Dano");
+        if (playerHealth <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }

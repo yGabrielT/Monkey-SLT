@@ -23,15 +23,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void TakeDamage(float health, float damage, GameObject obj)
-    {
-        health -= damage;
-        Debug.Log("Dano");
-        if (health <= 0)
-        {
-            Destroy(obj);
-        }
-    }
+   
 
     void Update()
     {
