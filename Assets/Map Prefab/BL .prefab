@@ -584,6 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
+  waitTime: 5
 --- !u!61 &3868945979053434082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -736,6 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  waitTime: 5
 --- !u!61 &680681175865420234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1021,6 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f117d4776e3bfa548914145c13a681ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEntryRoom: 0
 --- !u!1 &5643027561270934929
 GameObject:
   m_ObjectHideFlags: 0
