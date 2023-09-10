@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class WeaponShoot : MonoBehaviour
 {
-    [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _spawnPos;
-    [SerializeField] private float _bulletSpeed = 10f;
-    [SerializeField] private float _destroyTimer = 3f;
     [SerializeField] private bool _isEnemy = false;
     [SerializeField] private float _enemyCooldown = .5f;
     private float MaxCd;
@@ -17,6 +14,14 @@ public class WeaponShoot : MonoBehaviour
     [SerializeField] float _shakeMag;
     [SerializeField] float _shakeDuration;
     [SerializeField] float RandomFactor = 0.5f;
+
+
+    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private float _bulletSpeed = 10f;
+    [SerializeField] private float _destroyTimer = 3f;
+    [SerializeField] private float fireRate = .3f;
+
+    private float fireTimer;
 
 
     void Start()
@@ -29,14 +34,18 @@ public class WeaponShoot : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetButtonDown("Fire1") && !_isEnemy)
+        if (Input.GetMouseButton(0) && !_isEnemy && fireTimer <= 0f)
         {
-            
+            fireTimer = fireRate;
             var objP = Instantiate(_bulletPrefab, _spawnPos.position, Quaternion.identity);
             var rbObjP = objP.GetComponent<Rigidbody2D>();
             rbObjP.AddForce(RandomAccuracy(this.gameObject.transform.right, RandomFactor) * _bulletSpeed, ForceMode2D.Impulse);
             _cam.Shake(RandomAccuracy(-transform.right, RandomFactor), _shakeMag, _shakeDuration);
             Destroy(objP, _destroyTimer);
+        }
+        else
+        {
+            fireTimer -= Time.deltaTime;
         }
         if(_isEnemy && inRange)
         {

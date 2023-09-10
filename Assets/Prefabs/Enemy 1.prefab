@@ -167,10 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd65201627fd1884e83bd102deef66f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 100
   ENEMY_MOVE_BASE_SPEED: 2
   _aggroRange: 9.7
   _pivotWeapon: {fileID: 5508301111664484457}
+  <_maxHealth>k__BackingField: 200
+  <_knockbackDelay>k__BackingField: 0.1
+  <_knockbackForce>k__BackingField: 5
 --- !u!50 &2549756553079383440
 Rigidbody2D:
   serializedVersion: 4
@@ -295,10 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ac9d84059ade542bbc71b7a8dbb329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 5145459981371646808, guid: 0742244d59bfedb41b3cf439898dfdfe, type: 3}
   _spawnPos: {fileID: 706757831637596380}
-  _bulletSpeed: 25
-  _destroyTimer: 3
   _isEnemy: 1
   _enemyCooldown: 1
   inRange: 0
@@ -306,3 +305,6 @@ MonoBehaviour:
   _shakeMag: 0
   _shakeDuration: 0
   RandomFactor: 0.5
+  _bulletPrefab: {fileID: 5145459981371646808, guid: 0742244d59bfedb41b3cf439898dfdfe, type: 3}
+  _bulletSpeed: 25
+  _destroyTimer: 3

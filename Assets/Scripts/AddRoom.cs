@@ -23,7 +23,7 @@ public class AddRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Bullet")
+        if(other.gameObject.tag == "Bullet" || other.gameObject.tag == "BulletPlayer")
         {
             Destroy(other.gameObject);
         }

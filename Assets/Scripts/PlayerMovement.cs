@@ -1,36 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDamageable
 {
 
-    [SerializeField] private Rigidbody2D _playerRb;
+    
     [SerializeField] private float MOVE_BASE_SPEED;
     private float _movementSpeed;
     Vector2 _direction;
-    private bool _isKnockBacked = false;
-    [SerializeField] private float _knockbackDelay = 0.5f;
-    [SerializeField] private float _knockbackForce = 3f;
-    [SerializeField] private float playerHealth = 100f;
-    [SerializeField] Transform weapon;
 
+    [SerializeField] private TextMeshProUGUI _vidaText;
+    [SerializeField] Transform _weapon;
+
+    public float _currentHealth { get; set; }
+    [field: SerializeField] public float _maxHealth { get; set; } = 100f;
+    public bool _isKnockbacked { get; set; }
+    public Rigidbody2D _rb { get; set; }
+    [field: SerializeField] public float _knockbackDelay { get; set; } = .5f;
+    [field: SerializeField] public float _knockbackForce { get; set; } = 10f;
+
+    void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        _currentHealth = _maxHealth;
+    }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        _vidaText.text = "Vida: " + _currentHealth;
+        if (!_isKnockbacked)
         {
-            StartCoroutine(KnockBack());
+            Move();
+            GetInput();
         }
         
-        Move();
-        GetInput();
     }
     
     private void Move()
     {
-        if(!_isKnockBacked)
-        _playerRb.velocity = _direction.normalized * _movementSpeed * MOVE_BASE_SPEED;
+
+        _rb.velocity = _direction.normalized * _movementSpeed * MOVE_BASE_SPEED;
     }
 
     private void GetInput()
@@ -38,36 +50,52 @@ public class PlayerMovement : MonoBehaviour
             var inputX = Input.GetAxis("Horizontal");
             var inputY = Input.GetAxis("Vertical");
             _direction = new Vector2(inputX, inputY);
-            _movementSpeed = Mathf.Clamp(_direction.magnitude, 0.0f, 1.0f);
+            _movementSpeed = Mathf.Clamp(_direction.magnitude, 0f, 1f);
+
     }
 
-    private IEnumerator KnockBack()
+    public IEnumerator KnockBack(Vector2 dir)
     {
         Debug.Log("Botao Espaço Pressionado");
-        _isKnockBacked = true;
-        _movementSpeed = 0f;
-        _playerRb.AddForce(weapon.forward * _knockbackForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(_knockbackDelay);
-        _isKnockBacked = false;
-        _playerRb.velocity = Vector2.zero;
+        _isKnockbacked = true;
+
+        float _elapsedTime = 0f;
+        while(_elapsedTime < _knockbackDelay)
+        {
+            _elapsedTime += Time.fixedDeltaTime;
+
+
+            //_playerRb.AddForce(weapon.forward.normalized * _knockbackForce, ForceMode2D.Impulse);
+            _rb.velocity = dir * _knockbackForce;
+            yield return new WaitForFixedUpdate();
+        }
+
+        _isKnockbacked = false;
+       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == ("Bullet"))
         {
-            TakeDamage(20f);
+            TakeDamage(5f, (transform.position - other.gameObject.transform.position).normalized);
+
             Destroy(other.gameObject);
         }
     }
 
-    private void TakeDamage(float damage)
+
+    public void TakeDamage(float damage, Vector2 bulletDir)
     {
-        playerHealth -= damage;
+        _currentHealth -= damage;
         Debug.Log("Dano");
-        if (playerHealth <= 0)
+        if (_currentHealth <= 0)
         {
             Destroy(this.gameObject);
         }
+
+        StartCoroutine(KnockBack(bulletDir));
     }
+
+
 }
