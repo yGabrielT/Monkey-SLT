@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - Rooms
   - BulletPlayer
+  - Walls
   layers:
   - Default
   - TransparentFX

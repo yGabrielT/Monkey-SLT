@@ -66,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 4538405139340944900}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &391853340663219164
 SpriteRenderer:
@@ -305,6 +305,4 @@ MonoBehaviour:
   _shakeMag: 0
   _shakeDuration: 0
   RandomFactor: 0.5
-  _bulletPrefab: {fileID: 5145459981371646808, guid: 0742244d59bfedb41b3cf439898dfdfe, type: 3}
-  _bulletSpeed: 25
-  _destroyTimer: 3
+  GunScriptable: {fileID: 11400000, guid: 35433a8ac3bbf6f42b4c62ecc150de7c, type: 2}

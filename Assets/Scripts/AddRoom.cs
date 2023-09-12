@@ -21,14 +21,6 @@ public class AddRoom : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.tag == "Bullet" || other.gameObject.tag == "BulletPlayer")
-        {
-            Destroy(other.gameObject);
-        }
-    }
-
     private Vector3 RandPos()
     {
         return new Vector3(transform.position.x + Random.Range(-5f, 5f), transform.position.y + Random.Range(-5f, 5f), transform.position.z);
