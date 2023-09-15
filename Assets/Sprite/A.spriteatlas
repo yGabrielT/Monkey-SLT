@@ -15,12 +15,25 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 1
+      filterMode: 0
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -34,10 +47,30 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: 85c7033fc943dd541a1e32f46bd3219f, type: 3}
     - {fileID: 2800000, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
+    - {fileID: 2800000, guid: 135705f15fc60884d99cdc8f281a4b43, type: 3}
+    - {fileID: 2800000, guid: 3cdea6fc0daac8d4f96b429dbc9d2bf0, type: 3}
+    - {fileID: 2800000, guid: 800b9a4c4696c8745bf490e4fd9f5970, type: 3}
+    - {fileID: 2800000, guid: ce64cb273a51ac74caf0d6f9479a5946, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
+    - 135705f15fc60884d99cdc8f281a4b43: -1201616944
+    - 135705f15fc60884d99cdc8f281a4b43: 1166404077
+    - 135705f15fc60884d99cdc8f281a4b43: 1553055455
+    - 135705f15fc60884d99cdc8f281a4b43: 111699050
+    - ce64cb273a51ac74caf0d6f9479a5946: -1754823715
+    - ce64cb273a51ac74caf0d6f9479a5946: 1371497765
+    - ce64cb273a51ac74caf0d6f9479a5946: -173774965
+    - ce64cb273a51ac74caf0d6f9479a5946: 1664642054
+    - 800b9a4c4696c8745bf490e4fd9f5970: -170990884
+    - 800b9a4c4696c8745bf490e4fd9f5970: 1469299415
+    - 800b9a4c4696c8745bf490e4fd9f5970: -792374485
+    - 800b9a4c4696c8745bf490e4fd9f5970: -439190271
+    - 3cdea6fc0daac8d4f96b429dbc9d2bf0: 1331370284
+    - 3cdea6fc0daac8d4f96b429dbc9d2bf0: 1519127660
+    - 3cdea6fc0daac8d4f96b429dbc9d2bf0: 714907910
+    - 3cdea6fc0daac8d4f96b429dbc9d2bf0: -1600493245
     - 85c7033fc943dd541a1e32f46bd3219f: 107179626
     - 85c7033fc943dd541a1e32f46bd3219f: -1616907338
     - 85c7033fc943dd541a1e32f46bd3219f: -27197578
@@ -950,6 +983,22 @@ SpriteAtlas:
     - 7fb2974f33c38024e88a55237dca9c12: 298555044
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: -1201616944, guid: 135705f15fc60884d99cdc8f281a4b43, type: 3}
+  - {fileID: 1166404077, guid: 135705f15fc60884d99cdc8f281a4b43, type: 3}
+  - {fileID: 1553055455, guid: 135705f15fc60884d99cdc8f281a4b43, type: 3}
+  - {fileID: 111699050, guid: 135705f15fc60884d99cdc8f281a4b43, type: 3}
+  - {fileID: -1754823715, guid: ce64cb273a51ac74caf0d6f9479a5946, type: 3}
+  - {fileID: 1371497765, guid: ce64cb273a51ac74caf0d6f9479a5946, type: 3}
+  - {fileID: -173774965, guid: ce64cb273a51ac74caf0d6f9479a5946, type: 3}
+  - {fileID: 1664642054, guid: ce64cb273a51ac74caf0d6f9479a5946, type: 3}
+  - {fileID: -170990884, guid: 800b9a4c4696c8745bf490e4fd9f5970, type: 3}
+  - {fileID: 1469299415, guid: 800b9a4c4696c8745bf490e4fd9f5970, type: 3}
+  - {fileID: -792374485, guid: 800b9a4c4696c8745bf490e4fd9f5970, type: 3}
+  - {fileID: -439190271, guid: 800b9a4c4696c8745bf490e4fd9f5970, type: 3}
+  - {fileID: 1331370284, guid: 3cdea6fc0daac8d4f96b429dbc9d2bf0, type: 3}
+  - {fileID: 1519127660, guid: 3cdea6fc0daac8d4f96b429dbc9d2bf0, type: 3}
+  - {fileID: 714907910, guid: 3cdea6fc0daac8d4f96b429dbc9d2bf0, type: 3}
+  - {fileID: -1600493245, guid: 3cdea6fc0daac8d4f96b429dbc9d2bf0, type: 3}
   - {fileID: 107179626, guid: 85c7033fc943dd541a1e32f46bd3219f, type: 3}
   - {fileID: -1616907338, guid: 85c7033fc943dd541a1e32f46bd3219f, type: 3}
   - {fileID: -27197578, guid: 85c7033fc943dd541a1e32f46bd3219f, type: 3}
@@ -1861,6 +1910,22 @@ SpriteAtlas:
   - {fileID: 324329478, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
   - {fileID: 298555044, guid: 7fb2974f33c38024e88a55237dca9c12, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Chimpanze clt_0
+  - Chimpanze clt_1
+  - Chimpanze clt_2
+  - Chimpanze clt_3
+  - orangutango clt_2
+  - orangutango clt_3
+  - orangutango clt_0
+  - orangutango clt_1
+  - macaco aranha clt_2
+  - macaco aranha clt_3
+  - macaco aranha clt_0
+  - macaco aranha clt_1
+  - gorila CLT_1
+  - gorila CLT_0
+  - gorila CLT_3
+  - gorila CLT_2
   - Textures-16_3
   - Textures-16_4
   - Textures-16_228

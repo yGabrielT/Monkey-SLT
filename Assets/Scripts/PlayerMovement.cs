@@ -7,7 +7,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour, IDamageable
 {
 
-    
+    private bool isFlipped = false;
+    [SerializeField] private Animator _animPlayer;
     [SerializeField] private float MOVE_BASE_SPEED;
     private float _movementSpeed;
     Vector2 _direction;
@@ -22,14 +23,24 @@ public class PlayerMovement : MonoBehaviour, IDamageable
     [field: SerializeField] public float _knockbackDelay { get; set; } = .5f;
     [field: SerializeField] public float _knockbackForce { get; set; } = 10f;
 
+    SpriteRenderer _spr;
+
     void Start()
     {
+        _spr = GetComponentInChildren<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
         _currentHealth = _maxHealth;
     }
 
     void Update()
     {
+        if(_rb.velocity != Vector2.zero){
+            _animPlayer.SetBool("isWalking", true);
+        }
+        else{
+            _animPlayer.SetBool("isWalking", false);
+        }
+
         _vidaText.text = "Vida: " + _currentHealth;
         if (!_isKnockbacked)
         {
@@ -38,7 +49,7 @@ public class PlayerMovement : MonoBehaviour, IDamageable
         }
         
     }
-    
+
     private void Move()
     {
 
@@ -49,14 +60,23 @@ public class PlayerMovement : MonoBehaviour, IDamageable
     {
             var inputX = Input.GetAxis("Horizontal");
             var inputY = Input.GetAxis("Vertical");
+            
             _direction = new Vector2(inputX, inputY);
             _movementSpeed = Mathf.Clamp(_direction.magnitude, 0f, 1f);
+
+            if(inputX <0)
+            {
+                _spr.flipX = true;
+            }
+            else{
+                _spr.flipX = false;
+            }
 
     }
 
     public IEnumerator KnockBack(Vector2 dir)
     {
-        Debug.Log("Botao Espaço Pressionado");
+        Debug.Log("Botao Espaï¿½o Pressionado");
         _isKnockbacked = true;
 
         float _elapsedTime = 0f;
