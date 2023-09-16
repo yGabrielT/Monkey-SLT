@@ -12,6 +12,9 @@ public class EnemyMovement : MonoBehaviour, IDamageable
     [SerializeField] private GameObject _pivotWeapon;
     private WeaponShoot _weapon;
 
+    private Animator _animEnemy;
+    private SpriteRenderer _sprEnemy;
+
     public Rigidbody2D _rb { get; set; }
     public float _currentHealth { get; set; }
     [field: SerializeField] public float _maxHealth { get; set; } = 100f;
@@ -21,6 +24,8 @@ public class EnemyMovement : MonoBehaviour, IDamageable
 
     void Start()
     {
+        _sprEnemy = GetComponentInChildren<SpriteRenderer>();
+        _animEnemy = GetComponentInChildren<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _currentHealth = _maxHealth;
         _weapon = GetComponentInChildren<WeaponShoot>();
@@ -30,9 +35,35 @@ public class EnemyMovement : MonoBehaviour, IDamageable
 
     void Update()
     {
+        EnemyAnimation();
+
         if (!_isKnockbacked)
         {
             FollowPlayer();
+        }
+        
+    }
+
+    private void EnemyAnimation()
+    {
+        if(_rb.velocity != Vector2.zero){
+            _animEnemy.SetBool("isWalking", true);
+        }
+        else
+        {
+            _animEnemy.SetBool("isWalking", false);
+        }
+    }
+
+    private void FlipEnemySprite()
+    {
+        if (_rb.velocity.x < 0)
+        {
+            _sprEnemy.flipX = true;
+        }
+        else
+        {
+            _sprEnemy.flipX = false;
         }
     }
 

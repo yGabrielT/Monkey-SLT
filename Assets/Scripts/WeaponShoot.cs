@@ -54,7 +54,7 @@ public class WeaponShoot : MonoBehaviour
         if(_isEnemy && inRange)
         {
             
-            if(Cd <= 0f)
+            if(Cd <= 0f && _bulletPrefab != null)
             {
                 Cd = _enemyCooldown;
                 var objE = Instantiate(_bulletPrefab, _spawnPos.position, Quaternion.identity);
