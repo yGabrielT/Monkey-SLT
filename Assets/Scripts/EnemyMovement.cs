@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour, IDamageable
     void Update()
     {
         EnemyAnimation();
-
+        FlipEnemySprite();
         if (!_isKnockbacked)
         {
             FollowPlayer();
@@ -116,7 +116,8 @@ public class EnemyMovement : MonoBehaviour, IDamageable
         Debug.Log("Dano");
         if (_currentHealth <= 0)
         {
-            GameManager.Instance.Pontuacao += 10;
+            WeaponManager.Instance.Pontuacao += 10;
+            GameManager.Instance.numeberOfKills++;
             Destroy(this.gameObject);
         }
 

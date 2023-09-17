@@ -9,6 +9,7 @@ TagManager:
   - Rooms
   - BulletPlayer
   - Walls
+  - WeaponPlayer
   layers:
   - Default
   - TransparentFX

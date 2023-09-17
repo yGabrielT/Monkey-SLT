@@ -15,8 +15,8 @@ public class WeaponShoot : MonoBehaviour
     [SerializeField] float _shakeDuration;
     [SerializeField] float RandomFactor = 0.5f;
 
-
-    [SerializeField] private SOGun GunScriptable;
+    private int _actualNowWeapon;
+    private SOGun GunScriptable;
     private GameObject _bulletPrefab;
     private float _bulletSpeed = 10f;
     private float _destroyTimer = 3f;
@@ -27,12 +27,14 @@ public class WeaponShoot : MonoBehaviour
 
     void Start()
     {
+
+        GunScriptable = WeaponManager.Instance.actualWeapon;
         //Pegar variaveis do Scriptable Object
+        if (GunScriptable != null)
+        {
+            ChangeWeapon();
+        }
         
-        _bulletPrefab = GunScriptable.BulletPrefab;
-        _bulletSpeed = GunScriptable.BulletSpeed;
-        _destroyTimer = GunScriptable.DestroyTimer;
-        _fireRate = GunScriptable.FireRate;
 
         Cd = _enemyCooldown;
         
@@ -41,7 +43,12 @@ public class WeaponShoot : MonoBehaviour
 
     void Update()
     {
+        if (WeaponManager.Instance.actualWeapon != null && !_isEnemy && _actualNowWeapon != WeaponManager.Instance.weaponNumber)
+        {
+            ChangeWeapon();
+        }
         
+
         if (Input.GetMouseButton(0) && !_isEnemy && fireTimer <= 0f)
         {
             fireTimer = _fireRate;
@@ -68,6 +75,16 @@ public class WeaponShoot : MonoBehaviour
             
         }
            
+    }
+
+    private void ChangeWeapon()
+    {
+        _actualNowWeapon = WeaponManager.Instance.weaponNumber;
+        GunScriptable = WeaponManager.Instance.actualWeapon;
+        _bulletPrefab = GunScriptable.BulletPrefab;
+        _bulletSpeed = GunScriptable.BulletSpeed;
+        _destroyTimer = GunScriptable.DestroyTimer;
+        _fireRate = GunScriptable.FireRate;
     }
 
     private Vector3 RandomAccuracy(Vector3 weaponDir, float RandomnessFactor)

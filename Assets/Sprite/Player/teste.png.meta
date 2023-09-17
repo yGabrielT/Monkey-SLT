@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3cdea6fc0daac8d4f96b429dbc9d2bf0
+guid: c33f303f640eb3642991540a7d45a059
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 18
+  spriteExtrude: 2
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gorila CLT_0
+      name: teste_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +118,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5a068a50b7ed944cbe2aa4922de26c1
-      internalID: 1519127660
+      spriteID: f903ac609879ecc458d2b52cfca701ee
+      internalID: 1342312356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gorila CLT_1
+      name: teste_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,20 +139,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78da8814b810458468f6785d2310798d
-      internalID: 1331370284
+      spriteID: ab9862f2d61019242b6170cf55dba452
+      internalID: -1204908296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gorila CLT_2
+      name: teste_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,20 +160,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86a8c63bfbeebc94e90eeade2562e1bc
-      internalID: -1600493245
+      spriteID: 38f0966a5d66cdb43a9d165090f74c77
+      internalID: 1463937116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gorila CLT_3
+      name: teste_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc91f617b391d2498bc4944acd749d0
-      internalID: 714907910
+      spriteID: 15b0728d092a4484fa5e9ca4d65f76e5
+      internalID: 1949001635
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gorila CLT_0: 1519127660
-      gorila CLT_1: 1331370284
-      gorila CLT_2: -1600493245
-      gorila CLT_3: 714907910
+      teste_0: 1342312356
+      teste_1: -1204908296
+      teste_2: 1463937116
+      teste_3: 1949001635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

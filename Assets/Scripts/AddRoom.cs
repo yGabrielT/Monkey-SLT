@@ -15,6 +15,7 @@ public class AddRoom : MonoBehaviour
         {
             for (int i = 0; i < RandNum(); i++)
             {
+                GameManager.Instance.numberOfEnemies++;
                 Instantiate(templates.enemy, RandPos(), Quaternion.identity);
             }
         }
