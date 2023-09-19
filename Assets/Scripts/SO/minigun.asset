@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eef3ce10a77cdb4c89c2ccb60b1460e, type: 3}
   m_Name: minigun
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 5145459981371646808, guid: e40332312f6b87441b81b81e4b9c97fc, type: 3}
-  BulletSpeed: 40
-  DestroyTimer: 3
-  FireRate: 0.05
+  BulletPrefab: {fileID: 5145459981371646808, guid: 1839160e68dc8c348a3595cb974b9710, type: 3}
+  GunSprite: {fileID: 21300000, guid: 910efd32ac2ebcc43a984508818f5eba, type: 3}
+  BulletSpeed: 30
+  DestroyTimer: 1
+  FireRate: 0.1
   isShotgun: 0
   ShotgunSpread: 50

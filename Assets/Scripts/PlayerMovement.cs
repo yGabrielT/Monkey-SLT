@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour, IDamageable
 {
@@ -117,7 +118,7 @@ public class PlayerMovement : MonoBehaviour, IDamageable
         Debug.Log("Dano");
         if (_currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            SceneManager.LoadScene(5);
         }
 
         StartCoroutine(KnockBack(bulletDir));

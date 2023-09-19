@@ -18,7 +18,7 @@ public class WeaponManager : MonoBehaviour
     //2 - shotgun
     //3 - minigun
 
-    void Start()
+    void Awake()
     {
 
         if (Instance != this && Instance != null)

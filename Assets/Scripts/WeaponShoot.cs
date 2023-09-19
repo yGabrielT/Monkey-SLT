@@ -16,28 +16,36 @@ public class WeaponShoot : MonoBehaviour
     [SerializeField] float RandomFactor = 0.5f;
 
     private int _actualNowWeapon;
-    private SOGun GunScriptable;
+    public SOGun GunScriptable;
     private GameObject _bulletPrefab;
+    private SpriteRenderer _gunSpr;
     private float _bulletSpeed = 10f;
     private float _destroyTimer = 3f;
     private float _fireRate = .3f;
 
+
     private float fireTimer;
 
 
-    void Start()
+    public void Start()
     {
 
-        GunScriptable = WeaponManager.Instance.actualWeapon;
+        _gunSpr = GetComponent<SpriteRenderer>();
+        Cd = _enemyCooldown;
         //Pegar variaveis do Scriptable Object
         if (GunScriptable != null)
         {
             ChangeWeapon();
         }
-        
 
-        Cd = _enemyCooldown;
-        
+
+
+
+
+
+
+
+
     }
 
 
@@ -47,7 +55,6 @@ public class WeaponShoot : MonoBehaviour
         {
             ChangeWeapon();
         }
-        
 
         if (Input.GetMouseButton(0) && !_isEnemy && fireTimer <= 0f)
         {
@@ -77,10 +84,19 @@ public class WeaponShoot : MonoBehaviour
            
     }
 
-    private void ChangeWeapon()
+    public void ChangeWeapon()
     {
-        _actualNowWeapon = WeaponManager.Instance.weaponNumber;
-        GunScriptable = WeaponManager.Instance.actualWeapon;
+
+        if (WeaponManager.Instance.actualWeapon != null && !_isEnemy)
+        {
+            GunScriptable = WeaponManager.Instance.actualWeapon;
+        }
+        else
+        {
+            Debug.Log("nao Existe");
+        }
+
+        _gunSpr.sprite = GunScriptable.GunSprite;
         _bulletPrefab = GunScriptable.BulletPrefab;
         _bulletSpeed = GunScriptable.BulletSpeed;
         _destroyTimer = GunScriptable.DestroyTimer;

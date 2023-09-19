@@ -627,6 +627,7 @@ MonoBehaviour:
   weapon1: {fileID: 11400000, guid: 42c69aba64d0a854c915747aa6251fb9, type: 2}
   weapon2: {fileID: 11400000, guid: 68897c76ec069dd44846451069aa42b9, type: 2}
   weapon3: {fileID: 11400000, guid: 7728c9d936f2d004c89d41c873ecbf15, type: 2}
+  Pontuacao: 0
   actualWeapon: {fileID: 11400000, guid: 42c69aba64d0a854c915747aa6251fb9, type: 2}
   weaponNumber: 1
 --- !u!4 &420939734
@@ -1373,7 +1374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 458617216}
-  Pontuacao: 0
   Arma1Custo: 10
   Arma2Custo: 20
   Arma3Custo: 30
@@ -1381,6 +1381,8 @@ MonoBehaviour:
   Arma1Botao: {fileID: 0}
   Arma2Botao: {fileID: 734275048}
   Arma3Botao: {fileID: 1675549313}
+  numeberOfKills: 0
+  numberOfEnemies: 1
 --- !u!1 &1242993674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1507,134 @@ MonoBehaviour:
   player: {fileID: 14697395}
   cameraDist: 3.5
   smoothTime: 0.14
+--- !u!1 &1372356402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372356403}
+  - component: {fileID: 1372356404}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1372356403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372356402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 431.05405, y: 327.01263, z: -5.2485356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1372356404
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372356402}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c5b0695ca474bb7499ec08821a69b4c2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.442
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1405153238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7324205832726833069, guid: 082590b0b19af6547a2d70535040b46d, type: 3}
@@ -2303,10 +2433,6 @@ PrefabInstance:
     - target: {fileID: 1710105917320700457, guid: cef0a2bd16c968246bf9e8d213df38b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3316785031465867460, guid: cef0a2bd16c968246bf9e8d213df38b3, type: 3}
-      propertyPath: m_TagString
-      value: WeaponPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 3640862454034066530, guid: cef0a2bd16c968246bf9e8d213df38b3, type: 3}
       propertyPath: m_Name

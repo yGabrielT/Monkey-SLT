@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int numeberOfKills;
     public int numberOfEnemies = 1;
 
+    private WeaponShoot playerWeapon;
+
     void Awake()
     {
         if(Instance != this && Instance != null)
@@ -33,7 +35,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("WeaponPlayer");
+        playerWeapon = player.GetComponent<WeaponShoot>();
     }
 
    
@@ -43,11 +46,7 @@ public class GameManager : MonoBehaviour
         if(numeberOfKills == numberOfEnemies)
         {
             int sceneindex = SceneManager.GetActiveScene().buildIndex + 1;
-            if(sceneindex < 4)
-            {
-                SceneManager.LoadScene(sceneindex);
-            }
-            
+            SceneManager.LoadScene(sceneindex);
         }
         pontText.text = "Moedas: "+ WeaponManager.Instance.Pontuacao;
     }
@@ -57,11 +56,13 @@ public class GameManager : MonoBehaviour
     {
         if (WeaponManager.Instance.Pontuacao >= Arma2Custo)
         {
+            
             WeaponManager.Instance.Pontuacao -= Arma2Custo;
             Arma2Botao.interactable = false;
             Debug.Log("Arma 2");
             menu.SetActive(false);
             WeaponManager.Instance.weaponNumber = 2;
+            playerWeapon.ChangeWeapon();
         }
         else
         {
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Arma 3");
             menu.SetActive(false);
             WeaponManager.Instance.weaponNumber = 3;
+            playerWeapon.ChangeWeapon();
         }
         else
         {

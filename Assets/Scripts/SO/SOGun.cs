@@ -4,7 +4,7 @@ using UnityEngine;
 public class SOGun : ScriptableObject {
     
     public GameObject BulletPrefab;
-
+    public Sprite GunSprite;
     public float BulletSpeed = 10f;
     public float DestroyTimer = 3f;
     public float FireRate = .3f;

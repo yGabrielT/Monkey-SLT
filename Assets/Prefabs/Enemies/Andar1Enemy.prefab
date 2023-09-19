@@ -281,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 8432957535175958765}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -1.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.8552, y: 0.25669998, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4538405139340944900}
@@ -359,4 +359,4 @@ MonoBehaviour:
   _shakeMag: 0
   _shakeDuration: 0
   RandomFactor: 0.5
-  GunScriptable: {fileID: 11400000, guid: 35433a8ac3bbf6f42b4c62ecc150de7c, type: 2}
+  GunScriptable: {fileID: 11400000, guid: 49821341280c60b4b90340c8460d32c7, type: 2}
