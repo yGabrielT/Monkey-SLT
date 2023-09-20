@@ -116,7 +116,7 @@ public class EnemyMovement : MonoBehaviour, IDamageable
         Debug.Log("Dano");
         if (_currentHealth <= 0)
         {
-            WeaponManager.Instance.Pontuacao += 10;
+            WeaponManager.Instance.Pontuacao += 2;
             GameManager.Instance.numeberOfKills++;
             Destroy(this.gameObject);
         }
@@ -126,7 +126,7 @@ public class EnemyMovement : MonoBehaviour, IDamageable
 
     public IEnumerator KnockBack(Vector2 dir)
     {
-        Debug.Log("Botao Espaço Pressionado");
+        Debug.Log("Botao Espaï¿½o Pressionado");
         _isKnockbacked = true;
 
         float _elapsedTime = 0f;

@@ -224,7 +224,7 @@ MonoBehaviour:
   ENEMY_MOVE_BASE_SPEED: 2
   _aggroRange: 9.7
   _pivotWeapon: {fileID: 5508301111664484457}
-  <_maxHealth>k__BackingField: 100
+  <_maxHealth>k__BackingField: 300
   <_knockbackDelay>k__BackingField: 0.1
   <_knockbackForce>k__BackingField: 5
 --- !u!50 &2549756553079383440
