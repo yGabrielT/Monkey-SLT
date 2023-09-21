@@ -1,4 +1,4 @@
-Video do jogo funcionando: https://www.mediafire.com/file/lgcftoaofkv35ow/2023-09-20+21-32-28.mp4/file
+Video do jogo funcionando: https://youtu.be/b1Bu3lJ1oRY
 
 # Projeto jogo 3º bimestre
 Integrantes: Gabriel Trindade e João Pedro Caetano
