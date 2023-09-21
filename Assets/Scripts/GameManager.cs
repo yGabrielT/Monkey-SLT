@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(numeberOfKills == numberOfEnemies)
+        if(numeberOfKills >= numberOfEnemies)
         {
             int sceneindex = SceneManager.GetActiveScene().buildIndex + 1;
             SceneManager.LoadScene(sceneindex);

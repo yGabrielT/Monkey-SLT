@@ -15,13 +15,18 @@ public class AddRoom : MonoBehaviour
         {
             for (int i = 0; i < RandNum(); i++)
             {
-                GameManager.Instance.numberOfEnemies++;
-                Instantiate(templates.enemy, RandPos(), Quaternion.identity);
+                Invoke("SpawnEnemies", .75f);
             }
         }
         
+        
     }
 
+    private void SpawnEnemies()
+    {
+        GameManager.Instance.numberOfEnemies++;
+        Instantiate(templates.enemy, RandPos(), Quaternion.identity);
+    }
     private Vector3 RandPos()
     {
         return new Vector3(transform.position.x + Random.Range(-5f, 5f), transform.position.y + Random.Range(-5f, 5f), transform.position.z);
